@@ -1,0 +1,7 @@
+{
+	"language":"en",
+	"mappings":[
+		{ "name" : "ext-string" , "slug":"string"},
+		{ "name" : "ext-time" , "slug":"time"}
+	]
+}

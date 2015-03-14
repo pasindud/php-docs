@@ -1,0 +1,84 @@
+<hr />
+
+<p>slug: string_pos
+Contributors: ["John","Travis"]</p>
+
+<h2>template: "custom_template"</h2>
+
+<h1>SYNOPSIS</h1>
+
+<p><code>int function strpos(
+    string $haystack,
+    mixed $needle,
+    int $offset = 0
+)</code></p>
+
+<p>Find the position of the first occurrence of a substring in a string</p>
+
+<h1>DESCRIPTION</h1>
+
+<p>Find the numeric position of the first occurence of <code>$needle</code> in the <code>$haystack</code> string</p>
+
+<h1>PARAMETERS</h1>
+
+<ul>
+<li><code>$haystack</code>
+The string to search in</li>
+<li><code>$needle</code>
+If <code>$needle</code> is not a string, it is converted to an integer and applied as the ordinal value of a character.</li>
+<li><code>$offset</code>
+If specified, <a href="http://www.php.net/search">search will start</a> this number of characters counted from the beginning of the
+string. Unlike [FUNCTION:STRRPOS] and [FUNCTION:STRRIPOS], the offset cannot be negative.</li>
+</ul>
+
+<h1>RETURN VALUE</h1>
+
+<p>Returns the position of where the needle exists relative to the beginning of the <code>$haystack</code> string
+(independent of offset). Also note that string positions start at 0, and not 1.
+Returns [TYPE:FALSE] if the needle was not found.
+[SNIPPET:RETURN.FALSEPROBLEM]</p>
+
+<h1>CHANGELOG</h1>
+
+<h2>| Version | Description</h2>
+
+<p>| 5.2.6 | Something cool happened
+| 5.2.2 | If the <code>$offset</code> parameter indicates the position of a negative truncation or beyond, false is returned. Other versions get the string from start.</p>
+
+<h1>EXAMPLES</h1>
+
+<p>Using <em>===</em>:
+``php
+&lt;?php
+$mystring = 'abc';
+$findme   = 'a';
+$pos = strpos($mystring, $findme);</p>
+
+<p>// Note our use of ===.  Simply == would not work as expected
+// because the position of 'a' was the 0th (first) character.
+if ($pos === false) {
+    echo "The string '$findme' was not found in the string '$mystring'";
+} else {
+    echo "The string '$findme' was found in the string '$mystring'";
+    echo " and exists at position $pos";
+}
+?>
+``</p>
+
+<h1>NOTES</h1>
+
+<ul>
+<li>[NOTE:BIN-SAFE]</li>
+</ul>
+
+<h1>SEE ALSO</h1>
+
+<ul>
+<li>[FUNCTION:stripos]</li>
+<li>[FUNCTION:strrpos]</li>
+<li>[FUNCTION:strripos]</li>
+<li>[FUNCTION:strstr]</li>
+<li>[FUNCTION:strpbrk]</li>
+<li>[FUNCTION:substr]</li>
+<li>[FUNCTION:preg_match]</li>
+</ul>
