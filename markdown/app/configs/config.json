@@ -1,0 +1,12 @@
+{
+	"baseUrl":"localhost",
+	"lang_path":"../languages",
+	"languages":[
+		{
+			"language":"en"
+		},		
+		{
+			"language":"sp"
+		}
+	]
+}

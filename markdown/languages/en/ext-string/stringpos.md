@@ -6,13 +6,14 @@ template: "custom_template"
 
 # SYNOPSIS
 
-```
+````
 int function strpos(
     string $haystack,
     mixed $needle,
     int $offset = 0
 )
-```
+````
+
 
 Find the position of the first occurrence of a substring in a string
 

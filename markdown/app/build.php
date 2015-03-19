@@ -5,7 +5,9 @@ $build_extensions = "ext-string"; // or *
 
 require_once 'md/Michelf/Markdown.inc.php';
 
-
+//^(int)\sfunction\s([a-z]*)\((\s|\S)*((string|int|mixed)(\s|\S)*$([a-z]*))?
+//((string|int|mixed)(\s)*(\$)([a-z])*(,))
+//
 $my_text =file_get_contents("../languages/en/ext-string/stringpos.md") ;
 
 

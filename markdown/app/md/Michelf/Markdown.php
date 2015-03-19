@@ -1523,7 +1523,22 @@ class Markdown implements MarkdownInterface {
 		switch ($token{0}) {
 			case "\\":
 				return $this->hashPart("&#". ord($token{1}). ";");
+			
 			case "`":
+				// echo '/^(.*?[````])'.preg_quote($token).'(?!`)(.*)$/sm'."\n";
+				
+
+				if (preg_match('/^(.*?[^`])````(?!`)(.*)$/sm', 
+					$str, $matches))
+				{
+					echo "FOUND\n";
+					var_dump($matches);
+					exit();
+					$str = $matches[2];
+					$codespan = $this->makeCodeSpan($matches[1]);
+					return $this->hashPart($codespan);
+				}
+
 				# Search for end marker in remaining text.
 				if (preg_match('/^(.*?[^`])'.preg_quote($token).'(?!`)(.*)$/sm', 
 					$str, $matches))
